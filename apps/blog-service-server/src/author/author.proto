@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+                 package author;
+service AuthorService {
+ rpc createAuthor (AuthorCreateInput) returns (Author) {}
+rpc authors (findManyParams) returns (stream Author) {}
+rpc author (AuthorWhereUniqueInput) returns (Author) {}
+rpc updateAuthor (AuthorUpdateInput) returns (Author) {}
+rpc deleteAuthor (AuthorWhereUniqueInput) returns (Author) {}
+rpc findManyAuthor (AuthorWhereUniqueInput) returns (stream Post) {}
+rpc updateAuthor (PostParams) returns (stream Post) {}
+rpc connectAuthor (PostParams) returns (Post) {}
+rpc disconnectAuthor (PostParams) returns (Post) {} 
+ }
+message AuthorCreateInput {
+string createdAt = 1;
+string email = 2;
+string id = 3;
+string name = 4;
+repeated Post posts = 5;
+string updatedAt = 6;
+};
+message Author {
+string createdAt = 1;
+string email = 2;
+string id = 3;
+string name = 4;
+repeated Post posts = 5;
+string updatedAt = 6;
+};
+message AuthorWhereUniqueInput {
+string createdAt = 1;
+string email = 2;
+string id = 3;
+string name = 4;
+repeated Post posts = 5;
+string updatedAt = 6;
+};
+message AuthorUpdateInput {
+string createdAt = 1;
+string email = 2;
+string id = 3;
+string name = 4;
+repeated Post posts = 5;
+string updatedAt = 6;
+};
+message findManyParams {
+
+};
+message Post {
+string content = 1;
+string createdAt = 2;
+string id = 3;
+string title = 4;
+string updatedAt = 5;
+};
+message PostWhereUniqueInput {
+string content = 1;
+string createdAt = 2;
+string id = 3;
+string title = 4;
+string updatedAt = 5;
+};
+message PostParams {
+AuthorWhereUniqueInput authorWhereUniqueInput = 1;
+PostWhereUniqueInput postWhereUniqueInput = 2;
+};

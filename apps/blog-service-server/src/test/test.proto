@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+                 package test;
+service TestService {
+ rpc createTest (TestCreateInput) returns (Test) {}
+rpc tests (findManyParams) returns (stream Test) {}
+rpc test (TestWhereUniqueInput) returns (Test) {}
+rpc updateTest (TestUpdateInput) returns (Test) {}
+rpc deleteTest (TestWhereUniqueInput) returns (Test) {} 
+ }
+message TestCreateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string relatedPost = 5;
+repeated string status = 6;
+repeated string test = 7;
+string updatedAt = 8;
+};
+message Test {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string relatedPost = 5;
+repeated string status = 6;
+repeated string test = 7;
+string updatedAt = 8;
+};
+message TestWhereUniqueInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string relatedPost = 5;
+repeated string status = 6;
+repeated string test = 7;
+string updatedAt = 8;
+};
+message TestUpdateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string relatedPost = 5;
+repeated string status = 6;
+repeated string test = 7;
+string updatedAt = 8;
+};
+message findManyParams {
+
+};
